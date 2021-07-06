@@ -5,7 +5,8 @@
     <form action="" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="initial_value" />
-        <p>initial value: {{initial_value}} result: {{result}}</p>
+        <input type="submit" value="convert" />
+        <p>initial value: {{initial_value}} grams<br>
+            result: {{result}} kg</p>
     </form>
 {% endblock content%}
