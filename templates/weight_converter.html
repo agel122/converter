@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1>Let's convert it!</h1>
+    <form method="POST" action="{% url 'weight_converter' %}">
+        {% csrf_token %}
+        <p><input name = "value_in_g">&nbsp input value in grams</p>
+        <p><button type="submit">Calculate</button></p>
+        <p>Converted result of {{initial_value}} g is:&nbsp{{result}}kg</p>
+    </form>
+</div>
+{% endblock %}
