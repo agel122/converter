@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
 
+
 class SimpleTests(TestCase):
     def test_home_page_status_code(self):
         response = self.client.get('/')
@@ -18,9 +19,15 @@ class SimpleTests(TestCase):
         response = self.client.get(reverse('weight_converter'))
         self.assertTemplateUsed(response, 'weight_converter.html')
 
-    def test_url_weightconverter_resoves_weight_converter_view(self):
+    def test_url_weightconverter_resolves_weight_converter_view(self):
         view = resolve('/weight_converter/')
         self.assertEqual(view.func.__name__, 'weight_converter')
+
+    def test_weightconverter_view_calculation(self):
+        response = self.client.post('/weight_converter/', {'added_data': '1234'})
+        self.assertEqual(response.context['result'], 1.234)
+
+
 
 
 
