@@ -6,7 +6,7 @@ def home(request):
     return render(request, 'base.html')
 
 
-def weigth_converter(request):
+def weight_converter(request):
     if request.method == 'POST':
         form = Adder(request.POST)
         if form.is_valid():
