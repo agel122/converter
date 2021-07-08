@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import weight_converter, home
+from .views import converter, home
 
 
 urlpatterns = [
     path('', home, name='home'),
-    path('weight_converter/', weight_converter, name='weight_converter'),
+    path('converter/', converter, name='converter'),
 ]
